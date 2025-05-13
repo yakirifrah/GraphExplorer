@@ -7,7 +7,6 @@ class RatingsController {
       const { title } = req.body;
       const {movieId} = req.params;
       const { rating, votes } = await getIMDbRating(title);
-      console.log({rating, votes});
       if (!rating || !votes) {
         return res.status(404).json({ error: 'Rating not found' });
       }

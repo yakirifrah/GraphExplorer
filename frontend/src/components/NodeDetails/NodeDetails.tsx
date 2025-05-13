@@ -1,5 +1,5 @@
 import { Box, Typography, Divider, Drawer } from '@mui/material';
-import { Node } from '../../utils/api';
+import type { Node } from '../../utils/api';
 
 interface NodeDetailsProps {
   node: Node | null;

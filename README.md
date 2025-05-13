@@ -10,7 +10,9 @@ GraphExplorer is a modern web application for visualizing and exploring graph da
 - Type-safe development with TypeScript
 - RESTful API backend with Express
 - Neo4j database integration
-- OpenAI integration for natural language query processing — (not implemented yet)
+## Future Enhancements
+- OpenAI integration for natural language query processing - coming soon
+- Movie recommendations dataset integration - coming soon
 
 ## Tech Stack
 
@@ -25,14 +27,49 @@ GraphExplorer is a modern web application for visualizing and exploring graph da
 - Node.js with Express
 - TypeScript
 - Neo4j Driver
-- OpenAI API integration 
+- OpenAI API integration
 
 ## Prerequisites
 
 - Node.js (v18 or higher)
 - pnpm (v10.9.0 or higher)
-- Neo4j Database instance
+- Neo4j Database instance (version 4.0 or higher)
 - OpenAI API key
+- Neo4j Desktop (for local development) or Neo4j Aura (for cloud deployment)
+
+## Dataset Setup
+
+This project uses the Neo4j Movie Recommendations dataset. You have several options to set up the dataset:
+
+### Option 1: Using Neo4j Sandbox (Recommended for Quick Start)
+1. Visit [Neo4j Sandbox](https://sandbox.neo4j.com?usecase=recommendations)
+2. Sign in or create a Neo4j account
+3. Launch the recommendations sandbox
+4. Use the provided connection details in your `dev.env` file
+
+### Option 2: Using Neo4j Desktop
+1. Download and install [Neo4j Desktop](https://neo4j.com/download/)
+2. Create a new project
+3. Download the dataset dump file from [Neo4j Graph Examples](https://github.com/neo4j-graph-examples/recommendations)
+4. Choose one of the following dump files:
+   - `recommendations-embeddings-50.dump` (includes OpenAI embeddings)
+   - `recommendations-40.dump` (standard version)
+5. Drop the dump file into the `Files` section of your Neo4j Desktop project
+6. Choose `Create new DBMS from dump` option
+7. Start the database and use the connection details in your `dev.env` file
+
+### Option 3: Using Neo4j Aura
+1. Create a Neo4j Aura account at [console.neo4j.io](https://console.neo4j.io)
+2. Create a new instance
+3. Download the dataset dump file from [Neo4j Graph Examples](https://github.com/neo4j-graph-examples/recommendations)
+4. Follow the import instructions at [console.neo4j.io/#import-instructions](https://console.neo4j.io/#import-instructions)
+5. Use the provided connection details in your `dev.env` file
+
+The dataset contains:
+- 28,863 nodes
+- 166,261 relationships
+- Movie and user data with ratings
+- Optional: OpenAI embeddings for enhanced search capabilities
 
 ## Setup Instructions
 
@@ -154,4 +191,3 @@ Frontend:
 - ESLint for frontend code linting
 - Biome for backend code formatting
 - TypeScript for type checking
-

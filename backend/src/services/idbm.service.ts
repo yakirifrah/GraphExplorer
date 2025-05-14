@@ -6,7 +6,7 @@ export const getIMDbRating = async (movieTitle:string) => {
     if (data.Response === 'True') {
       return { rating: data.imdbRating, votes: data.imdbVotes };
     } else {
-      throw { message: 'Movie not found' };
+      throw new Error( 'Movie not found' );
     }
   } catch (err) {
     throw err;
